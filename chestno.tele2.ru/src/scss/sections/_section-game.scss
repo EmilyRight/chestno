@@ -88,7 +88,8 @@
 
       .game-field__wave {
         position: absolute;
-        width: 150%;
+        width: 170%;
+        max-height: 43rem;
         pointer-events: none;
         user-select: none;
         z-index: 0;
@@ -96,45 +97,53 @@
           width: 150%;
           // max-height: 25rem;
 
-          animation: wave 25s linear 3s infinite alternate-reverse;
-          filter: brightness(-30%) saturate(100%) invert(53%) sepia(73%)
+          bottom: -8rem;
+          animation: wave 25s linear infinite alternate-reverse;
+          filter: brightness(80%) saturate(100%) invert(53%) sepia(73%)
             saturate(576%) hue-rotate(149deg) brightness(86%) contrast(89%);
         }
         &_2 {
-          width: 150%;
-
+          width: 170%;
+          bottom: -18rem;
+          z-index: 10;
           // max-height: 35rem;
           animation: wave 20s linear infinite alternate-reverse;
-          filter: brightness(20%) saturate(100%) invert(63%) sepia(64%)
+          filter: brightness(10%) saturate(100%) invert(63%) sepia(64%)
             saturate(2500%) hue-rotate(161deg) brightness(94%) contrast(100%);
           animation: wave 8s linear infinite alternate-reverse;
         }
         &_3 {
 
+          bottom: -15rem;
           filter: brightness(0) saturate(100%) invert(78%) sepia(24%)
             saturate(800%) hue-rotate(169deg) brightness(95%) contrast(102%);
           animation: wave 15s linear infinite alternate-reverse;
         }
         &_4 {
-
-          filter: brightness(0) saturate(100%) invert(76%) sepia(69%)
+          width: 200%;
+          bottom: -17rem;
+          filter: brightness(-20%) saturate(100%) invert(76%) sepia(69%)
             saturate(4819%) hue-rotate(168deg) brightness(106%) contrast(101%);
           animation: wave 10s linear infinite alternate-reverse;
         }
         &_5 {
-
+          width: 220%;
+          bottom: -28rem;
           filter: brightness(10%) saturate(100%) invert(87%) sepia(11%)
             saturate(1211%) hue-rotate(171deg) brightness(101%) contrast(104%);
           animation: wave 5s linear infinite alternate-reverse;
         }
         &_6 {
-
-          filter: brightness(0) saturate(100%) invert(76%) sepia(69%)
+          width: 240%;
+          bottom: -31rem;
+          filter: brightness(20%) saturate(100%) invert(76%) sepia(69%)
             saturate(4819%) hue-rotate(168deg) brightness(106%) contrast(101%);
-          animation: wave 13s linear 3s infinite alternate-reverse;
+          animation: wave 13s linear infinite alternate-reverse;
         }
         &_7 {
-
+          width: 240%;
+          bottom: -30rem;
+          // max-height: 20rem;
           left: -3rem;
           animation: wave 10s linear 1s infinite alternate-reverse;
         }
@@ -366,30 +375,33 @@
         }
 
         .game-field__wave {
+          // max-height: 60rem;
+          height: 300%;
+          width: 550%;
           &_1 {
-            bottom: -10rem;
+            bottom: -18rem;
             z-index: 5;
           }
           &_2 {
             // height: 150%;
-            bottom: -5rem;
+            bottom: -12rem;
             z-index: 4;
           }
           &_3 {
-            bottom: -12rem;
+            bottom: -15rem;
           }
           &_4 {
-            bottom: -10rem;
+            bottom: -15rem;
             z-index: 0;
           }
           &_5 {
-            bottom: -8rem;
+            bottom: -18rem;
           }
           &_6 {
-            bottom: -12rem;
+            bottom: -21rem;
           }
           &_7 {
-            bottom: -15rem;
+            bottom: -24rem;
           }
         }
       }
