@@ -709,12 +709,15 @@ body .page {
 @keyframes wave {
   0% {
     transform: translateX(0) translateZ(0) scaleY(1);
+    opacity: 0.5;
   }
   50% {
     transform: translateX(-20%) translateZ(0) scaleY(0.7);
+    opacity: 1;
   }
   100% {
     transform: translateX(-30%) translateZ(0) scaleY(1);
+    opacity: 0.9;
   }
 }
 @keyframes wave1 {
@@ -895,8 +898,9 @@ body .page {
   margin: 0;
   display: block;
   object-fit: cover;
-  max-height: 30vh;
-  min-height: 50rem;
+  max-height: 60vh;
+  min-height: 56rem;
+  height: 50vw;
 }
 .teaser .video-layer video.video-mobile {
   display: none;
@@ -1233,7 +1237,7 @@ body .page {
   .game {
     margin-top: 11rem;
     padding-bottom: 4rem;
-    min-height: 55rem;
+    min-height: 57rem;
   }
   .game .section-layer {
     padding: 2.4rem 2.2rem 13.5rem;
@@ -1334,6 +1338,7 @@ body .page {
   flex-direction: column;
   align-items: center;
   border-radius: 1.8rem;
+  overflow: hidden;
 }
 .game .section-layer_main .game__screen_main .game__text {
   margin-top: 4.6rem;
@@ -1409,26 +1414,34 @@ body .page {
 }
 .game .section-layer_main .game__screen_main .game-field__wave_1 {
   width: 150%;
-  bottom: -7rem;
-  animation: wave 20s linear infinite alternate-reverse;
+  animation: wave 25s linear 3s infinite alternate-reverse;
+  filter: brightness(-30%) saturate(100%) invert(53%) sepia(73%) saturate(576%) hue-rotate(149deg) brightness(86%) contrast(89%);
 }
 .game .section-layer_main .game__screen_main .game-field__wave_2 {
-  animation: wave 18s linear infinite alternate-reverse;
+  width: 150%;
+  animation: wave 20s linear infinite alternate-reverse;
+  filter: brightness(20%) saturate(100%) invert(63%) sepia(64%) saturate(2500%) hue-rotate(161deg) brightness(94%) contrast(100%);
+  animation: wave 8s linear infinite alternate-reverse;
 }
 .game .section-layer_main .game__screen_main .game-field__wave_3 {
-  animation: wave 17s linear infinite alternate-reverse;
+  filter: brightness(0) saturate(100%) invert(78%) sepia(24%) saturate(800%) hue-rotate(169deg) brightness(95%) contrast(102%);
+  animation: wave 15s linear infinite alternate-reverse;
 }
 .game .section-layer_main .game__screen_main .game-field__wave_4 {
-  animation: wave 16s linear infinite alternate-reverse;
+  filter: brightness(0) saturate(100%) invert(76%) sepia(69%) saturate(4819%) hue-rotate(168deg) brightness(106%) contrast(101%);
+  animation: wave 10s linear infinite alternate-reverse;
 }
 .game .section-layer_main .game__screen_main .game-field__wave_5 {
-  animation: wave 17s linear infinite alternate-reverse;
+  filter: brightness(10%) saturate(100%) invert(87%) sepia(11%) saturate(1211%) hue-rotate(171deg) brightness(101%) contrast(104%);
+  animation: wave 5s linear infinite alternate-reverse;
 }
 .game .section-layer_main .game__screen_main .game-field__wave_6 {
-  animation: wave 13s linear infinite alternate-reverse;
+  filter: brightness(0) saturate(100%) invert(76%) sepia(69%) saturate(4819%) hue-rotate(168deg) brightness(106%) contrast(101%);
+  animation: wave 13s linear 3s infinite alternate-reverse;
 }
 .game .section-layer_main .game__screen_main .game-field__wave_7 {
-  animation: wave 19s linear infinite alternate-reverse;
+  left: -3rem;
+  animation: wave 10s linear 1s infinite alternate-reverse;
 }
 .game .section-layer_main .game__screen_main .game__item {
   position: absolute;
@@ -1475,6 +1488,16 @@ body .page {
   height: 150%;
   animation: 5s jump linear alternate infinite;
 }
+.game .section-layer_main .game__screen_main .dolphin__head, .game .section-layer_main .game__screen_main .dolphin__tail {
+  background: url(../img/page/tail-bottom.svg) no-repeat 50% 50%;
+  display: block;
+  background-size: contain;
+  cursor: pointer;
+}
+.game .section-layer_main .game__screen_main .dolphin__head {
+  position: absolute;
+  background-image: url(../img/page/head-bottom.svg);
+}
 .game .section-layer_main .game__screen_main .dolphin__tail {
   animation: 0.55s ease-in-out tail alternate infinite;
 }
@@ -1504,14 +1527,7 @@ body .page {
   height: 100%;
   width: 40%;
 }
-.game .section-layer_main .game__screen_main .game__field_top .dolphin__head, .game .section-layer_main .game__screen_main .game__field_top .dolphin__tail {
-  background: url(../img/page/tail-top.svg) no-repeat 50% 50%;
-  display: block;
-  background-size: contain;
-  cursor: pointer;
-}
 .game .section-layer_main .game__screen_main .game__field_top .dolphin__head {
-  position: absolute;
   right: -15%;
   width: 100%;
   height: 50%;
@@ -1524,6 +1540,7 @@ body .page {
   top: 6%;
   right: 60%;
   transform-origin: 70% 24%;
+  background-image: url(../img/page/tail-top.svg);
 }
 .game .section-layer_main .game__screen_main .game__field_middle .game__item {
   width: 20rem;
@@ -1543,18 +1560,10 @@ body .page {
   height: 100%;
   width: 40%;
 }
-.game .section-layer_main .game__screen_main .game__field_middle .dolphin__head, .game .section-layer_main .game__screen_main .game__field_middle .dolphin__tail {
-  background: url(../img/page/tail-bottom.svg) no-repeat 50% 50%;
-  display: block;
-  background-size: contain;
-  cursor: pointer;
-}
 .game .section-layer_main .game__screen_main .game__field_middle .dolphin__head {
-  position: absolute;
   right: -15%;
   width: 100%;
   height: 50%;
-  background-image: url(../img/page/head-bottom.svg);
 }
 .game .section-layer_main .game__screen_main .game__field_middle .dolphin__tail {
   position: absolute;
@@ -1581,19 +1590,11 @@ body .page {
   height: 100%;
   width: 40%;
 }
-.game .section-layer_main .game__screen_main .game__field_bottom .dolphin__head, .game .section-layer_main .game__screen_main .game__field_bottom .dolphin__tail {
-  background: url(../img/page/tail-bottom.svg) no-repeat 50% 50%;
-  display: block;
-  background-size: contain;
-  cursor: pointer;
-}
 .game .section-layer_main .game__screen_main .game__field_bottom .dolphin__head {
-  position: absolute;
   right: -15%;
   top: 0%;
   width: 100%;
   height: 50%;
-  background-image: url(../img/page/head-bottom.svg);
 }
 .game .section-layer_main .game__screen_main .game__field_bottom .dolphin__tail {
   position: absolute;
@@ -1641,22 +1642,28 @@ body .page {
     height: 95%;
   }
   .game .section-layer_main .game__screen_main .game-field__wave_1 {
-    bottom: -1rem;
+    bottom: -10rem;
     z-index: 5;
-    height: 105%;
   }
   .game .section-layer_main .game__screen_main .game-field__wave_2 {
-    height: 150%;
-    bottom: 0rem;
+    bottom: -5rem;
     z-index: 4;
   }
   .game .section-layer_main .game__screen_main .game-field__wave_3 {
-    z-index: 1;
-    bottom: -7rem;
+    bottom: -12rem;
   }
   .game .section-layer_main .game__screen_main .game-field__wave_4 {
-    bottom: -2rem;
+    bottom: -10rem;
     z-index: 0;
+  }
+  .game .section-layer_main .game__screen_main .game-field__wave_5 {
+    bottom: -8rem;
+  }
+  .game .section-layer_main .game__screen_main .game-field__wave_6 {
+    bottom: -12rem;
+  }
+  .game .section-layer_main .game__screen_main .game-field__wave_7 {
+    bottom: -15rem;
   }
 }
 

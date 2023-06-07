@@ -112,7 +112,7 @@ class GameView extends ItemView {
             </div>
             <div class="game-field__area game__field_top">
               <img
-                src=${waveImg5}
+                src=${waveImg6}
                 alt=""
                 class="game-field__wave game-field__wave_5"
               />
@@ -122,31 +122,31 @@ class GameView extends ItemView {
                 class="game-field__wave game-field__wave_6"
               />
               <img
-              src=${waveImg7}
+              src=${waveImg6}
                 alt=""
                 class="game-field__wave game-field__wave_7"
               />
             </div>
             <div class="game-field__area game__field_middle">
               <img
-              src=${waveImg3}
+              src=${waveImg6}
                 alt=""
                 class="game-field__wave game-field__wave_3"
               />
               <img
-              src=${waveImg4}
+              src=${waveImg6}
                 alt=""
                 class="game-field__wave game-field__wave_4"
               />
             </div>
             <div class="game-field__area game__field_bottom">
               <img
-              src=${waveImg1}
+              src=${waveImg6}
                 alt=""
                 class="game-field__wave game-field__wave_1"
               />
               <img
-              src=${waveImg2}
+              src=${waveImg6}
                 alt=""
                 class="game-field__wave game-field__wave_2"
               />
