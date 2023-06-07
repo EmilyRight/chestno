@@ -1653,10 +1653,10 @@ body .page {
   }
   .game .section-layer_main .game__screen_main .game-field__wave {
     height: 300%;
-    width: 550%;
+    width: 490%;
   }
   .game .section-layer_main .game__screen_main .game-field__wave_1 {
-    bottom: -18rem;
+    bottom: -15rem;
     z-index: 5;
   }
   .game .section-layer_main .game__screen_main .game-field__wave_2 {
@@ -1664,20 +1664,24 @@ body .page {
     z-index: 4;
   }
   .game .section-layer_main .game__screen_main .game-field__wave_3 {
-    bottom: -15rem;
+    height: 330%;
+    bottom: -16rem;
   }
   .game .section-layer_main .game__screen_main .game-field__wave_4 {
-    bottom: -15rem;
+    bottom: -16rem;
     z-index: 0;
   }
   .game .section-layer_main .game__screen_main .game-field__wave_5 {
-    bottom: -18rem;
+    height: 370%;
+    bottom: -28rem;
   }
   .game .section-layer_main .game__screen_main .game-field__wave_6 {
-    bottom: -21rem;
+    height: 360%;
+    bottom: -25rem;
   }
   .game .section-layer_main .game__screen_main .game-field__wave_7 {
-    bottom: -24rem;
+    height: 350%;
+    bottom: -27rem;
   }
 }
 
