@@ -38,6 +38,9 @@
       object-fit: cover;
       max-height: 30vh;
       min-height: 50rem;
+      &.video-mobile {
+        display: none;
+      }
     }
   }
 
@@ -145,8 +148,15 @@
     }
     .video-layer {
       max-width: 100%;
+
       video {
         min-height: 40rem;
+        &.video-desktop {
+          display: none;
+        }
+        &.video-mobile {
+          display: block;
+        }
       } //37.5rem default
     }
     .teaser-body {

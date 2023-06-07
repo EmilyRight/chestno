@@ -17,6 +17,8 @@ let screensAnimation;
 window.addEventListener('load', () => {
   const sectionGame = document.querySelector('.section__game');
   sectionGame.innerHTML = String(game.createFirstScreen());
+  game.openModal();
+  game.handleClosingModal();
   startGame();
 
   document.addEventListener('endGame', () => {
@@ -26,8 +28,16 @@ window.addEventListener('load', () => {
     closeShareModal();
     playAgain();
   });
+  document.addEventListener('click', (event) => {
+    const modalBody = event.target.closest('.modal');
+    const modal = event.target.closest('.modal__wrapper');
+    if (modalBody && !modal) {
+      game.closeModal();
+    }
+  });
   goNextSection();
   detectDevice();
+  // video
   videoTeaser();
   new WOW().init();
   gtmSet();
@@ -116,39 +126,32 @@ function videoTeaser() {
   const startedClass = 'is_started';
   const savingClass = 'device-suspended-mode';
   const offsetPause = 400;
-  const selectorVideo = '#video-teaser';
+  const selectorVideo = '.video-teaser';
 
-  const video = document.querySelector(selectorVideo);
+  const vd = document.querySelector(selectorVideo);
 
   // change video source on HD
-  // const mobileVideoUrl = '../video/video_mobile.mp4';
-  // ($(window).width() < 960) ? video.src = mobileVideoUrl : null;
+  // let hdVideoUrl = './video/video.h264.mp4'; ($(window).width() >=960)? vd.src = hdVideoUrl : null;
 
   function playPause() {
-    const scrolled = window.pageYOffset || document.documentElement.scrollTop;
-    const state = video.paused;
-
+    const scrolled = window.pageYOffset || document.documentElement.scrollTop; const
+      state = vd.paused;
     if (+scrolled >= offsetPause && !state) {
-      video.pause();
+      vd.pause();
     } else if (+scrolled < offsetPause && state) {
-      video.play();
+      vd.play();
     }
   }
-  const readyPlay = video.play();
+
+  const readyPlay = vd.play();
   if (readyPlay !== undefined) {
     readyPlay.then(() => {
-      window.addEventListener('scroll', () => {
-        playPause();
-      });
-
-      video.classList.add(startedClass);
+      window.addEventListener('scroll', playPause);
+      vd.classList.add(startedClass);
     }).catch((err) => { // console.warn('Automatic playback failed.');
-      video.classList.add(savingClass);
+      vd.classList.add(savingClass);
       $('.teaser,body').on('touchstart', () => {
-        if (!video.playing) {
-          video.play();
-          video.classList.add(startedClass);
-        }
+        if (!vd.playing) { vd.play(); vd.classList.add(startedClass); }
       });
     });
   }
@@ -156,19 +159,17 @@ function videoTeaser() {
 
 // Удалить или порефакторить
 function updateVideoSource() {
-  const video = document.getElementById('video-teaser');
-  const videoSources = video.getElementsByTagName('source');
+  const videoSourceMob = document.querySelector('.link-video-mobile').href;
+  console.log(videoSourceMob);
+  const videoSourceDesk = document.querySelector('.link-video-desktop').href;
+  const source = document.querySelector('.video-source');
   const width = window.innerWidth;
-  const videoSource = document.createElement('source');
-
-  if (width <= 600) {
-    videoSource.setAttribute('src', '.src/video/video_mobile.mp4');
+  if (width > 600) {
+    console.log('hey');
+    source.setAttribute('src', videoSourceDesk);
   } else {
-    videoSource.setAttribute('src', './video/video1280.h264.mp4');
+    source.setAttribute('src', videoSourceMob);
   }
-  videoSource.setAttribute('type', 'video/mp4');
-  video.append(videoSource);
-  videoTeaser();
 }
 
 // scroll-to

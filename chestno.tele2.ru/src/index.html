@@ -32,7 +32,16 @@
     <link rel="dns-prefetch" href="//www.googletagmanager.com/" />
     <link rel="preconnect" href="//ajax.googleapis.com/ajax/libs/jquery/" />
     <link rel="preconnect" href="//www.googletagmanager.com/" />
-
+    <link
+      rel="preload"
+      href="./video/video1280.h264.mp4"
+      class="link-video-desktop"
+    />
+    <link
+      rel="preload"
+      href="./video/video_mobile.mp4"
+      class="link-video-mobile"
+    />
     <link
       rel="preload"
       as="font"
@@ -141,16 +150,32 @@
         <div class="video-layer">
           <video
             width="100%"
-            id="video-teaser"
+            class="video-teaser video-mobile"
             preload="auto"
             autoplay
             loop
             muted
             playsinline
           >
-            <source src="./video/video1280.h264.mp4" type="video/mp4" />
             <source
               class="video-source"
+              type="video/mp4"
+              id="video-mobile"
+              src="./video/video_mobile.mp4"
+            />
+          </video>
+          <video
+            width="100%"
+            class="video-teaser video-desktop"
+            preload="auto"
+            autoplay
+            loop
+            muted
+            playsinline
+          >
+            <source
+              class="video-source video-desktop"
+              id="video-desktop"
               src="./video/video1280.h264.mp4"
               type="video/mp4"
             />
@@ -446,6 +471,29 @@
             >
             <div class="share__close-icon">
               <span class="share__close"></span>
+            </div>
+          </div>
+        </div> -->
+        <!-- <div class="section-layer__info info modal">
+          <div class="modal__wrapper info__wrapper">
+            <div class="info__title modal__title">
+              Звоните сколько угодно, если вы&nbsp;в&nbsp;Tele2
+            </div>
+            <p class="subtitle">
+              Подключайтесь, чтобы получить безлимит на&nbsp;звонки в&nbsp;сети
+              Tele2 и&nbsp;отдыхать спокойно
+            </p>
+            <a
+              class="btn btn-primary js-gtm-event"
+              href="https://tele2.ru/tariffs"
+              data-event="conv_connect-game"
+              data-section="section-game-score"
+              target="_blank"
+            >
+              Подключиться
+            </a>
+            <div class="modal__close-icon">
+              <span class="modal__close"></span>
             </div>
           </div>
         </div> -->

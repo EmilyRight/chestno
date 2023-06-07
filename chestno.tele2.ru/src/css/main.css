@@ -225,6 +225,7 @@ h4 {
 }
 
 .subtitle {
+  font-family: "tele2_sans";
   font-size: 2.2rem;
   line-height: 2.8rem;
 }
@@ -897,6 +898,9 @@ body .page {
   max-height: 30vh;
   min-height: 50rem;
 }
+.teaser .video-layer video.video-mobile {
+  display: none;
+}
 .teaser-heading {
   position: absolute;
   left: 0;
@@ -990,6 +994,12 @@ body .page {
   .teaser .video-layer video {
     min-height: 40rem;
   }
+  .teaser .video-layer video.video-desktop {
+    display: none;
+  }
+  .teaser .video-layer video.video-mobile {
+    display: block;
+  }
   .teaser .teaser-body {
     bottom: auto;
   }
@@ -1069,12 +1079,20 @@ body .page {
   border-radius: 1rem;
   margin-bottom: 2rem;
 }
+.game .section-layer_initial .box-content__link {
+  font-family: "tele2_sans";
+  text-decoration: underline;
+}
+.game .section-layer_initial .box-content__link:hover {
+  text-decoration: none;
+}
 .game .section-layer_initial .box-pic {
   position: absolute;
   right: 0%;
   bottom: -0.7rem;
   z-index: 10;
   max-width: 75%;
+  pointer-events: none;
 }
 .game .section-layer_initial .box-pic .pic-layer {
   display: block;
@@ -1089,7 +1107,7 @@ body .page {
   width: 100%;
   max-height: 55rem;
 }
-.game .share {
+.game .modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -1103,7 +1121,14 @@ body .page {
   justify-content: center;
   overflow: hidden;
 }
-.game .share__wrapper {
+.game .modal__link {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.game .modal__link:hover {
+  text-decoration: none;
+}
+.game .modal__wrapper {
   width: 90%;
   max-width: 66.4rem;
   padding: 3.6rem;
@@ -1116,34 +1141,13 @@ body .page {
   border-radius: 1rem;
   box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.0784313725);
 }
-.game .share__title {
+.game .modal__title {
   font-size: 2.8rem;
   line-height: 3.6rem;
   margin-bottom: 3.6rem;
   flex-basis: 100%;
 }
-.game .share__icons {
-  display: flex;
-  gap: 2.4rem;
-  align-items: center;
-  margin-right: 2.4rem;
-}
-.game .share__icon {
-  cursor: pointer;
-  width: 3.6rem;
-}
-.game .share__icon img {
-  width: 100%;
-}
-.game .share__copy-link {
-  font-family: "tele2_sans";
-  text-decoration: underline;
-  cursor: pointer;
-}
-.game .share__copy-link:hover {
-  text-decoration: none;
-}
-.game .share__close-icon {
+.game .modal__close-icon {
   position: absolute;
   width: 2.4rem;
   height: 2.4rem;
@@ -1154,18 +1158,18 @@ body .page {
   cursor: pointer;
   transition: 0.4s;
 }
-.game .share__close-icon:hover {
+.game .modal__close-icon:hover {
   opacity: 0.5;
 }
-.game .share__close-icon:active {
+.game .modal__close-icon:active {
   transform: scale(0.8);
 }
-.game .share__close {
+.game .modal__close {
   position: relative;
   height: 1px;
   width: 100%;
 }
-.game .share__close::after {
+.game .modal__close::after {
   content: "";
   position: absolute;
   height: 1px;
@@ -1174,7 +1178,7 @@ body .page {
   top: 0rem;
   transform: rotate(-45deg);
 }
-.game .share__close::before {
+.game .modal__close::before {
   content: "";
   position: absolute;
   height: 1px;
@@ -1183,8 +1187,14 @@ body .page {
   top: 0rem;
   transform: rotate(45deg);
 }
-.game .share.hidden {
+.game .modal.hidden {
   display: none;
+}
+.game .info__title {
+  max-width: 60%;
+}
+.game .info .subtitle {
+  margin-bottom: 3.6rem;
 }
 @media (max-width: 1200px) {
   .game .section-layer .box-pic {
@@ -1265,30 +1275,27 @@ body .page {
     padding: 1.3rem 3.5rem;
     min-width: auto;
   }
-  .game .share__wrapper {
+  .game .modal__wrapper {
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-  .game .share__title {
+  .game .modal__title {
     font-size: 2rem;
     line-height: 2.6rem;
+    max-width: 100%;
   }
-  .game .share__icons {
-    margin-right: 0;
-    margin-bottom: 2.4rem;
-  }
-  .game .share__close-icon {
+  .game .modal__close-icon {
     width: 1.8rem;
     height: 1.8rem;
     top: 2.1rem;
     right: 2.1rem;
   }
-  .game .share__close {
+  .game .modal__close {
     position: relative;
     width: 100%;
   }
-  .game .share__close::after {
+  .game .modal__close::after {
     content: "";
     position: absolute;
     height: 1px;
@@ -1297,7 +1304,7 @@ body .page {
     top: 0rem;
     transform: rotate(-45deg);
   }
-  .game .share__close::before {
+  .game .modal__close::before {
     content: "";
     position: absolute;
     height: 1px;
@@ -1661,6 +1668,33 @@ body .page {
     transform: rotate(-8deg);
   }
 }
+.game .share__icons {
+  display: flex;
+  gap: 2.4rem;
+  align-items: center;
+  margin-right: 2.4rem;
+}
+.game .share__icon {
+  cursor: pointer;
+  width: 3.6rem;
+}
+.game .share__icon img {
+  width: 100%;
+}
+.game .share__copy-link {
+  font-family: "tele2_sans";
+  text-decoration: underline;
+  cursor: pointer;
+}
+.game .share__copy-link:hover {
+  text-decoration: none;
+}
+@media (max-width: 600px) {
+  .game .share__icons {
+    margin-right: 0;
+    margin-bottom: 2.4rem;
+  }
+}
 .game .section-layer {
   overflow: hidden;
 }
@@ -1764,15 +1798,10 @@ body .page {
   z-index: 10;
 }
 .game .section-layer_final .result__share {
-  text-decoration: underline;
   position: relative;
   z-index: 10;
-  cursor: pointer;
   width: 100%;
   text-align: center;
-}
-.game .section-layer_final .result__share:hover {
-  text-decoration: none;
 }
 .game .section-layer_final .result__waves {
   position: absolute;
@@ -1842,15 +1871,14 @@ body .page {
   .game .section-layer_final {
     padding: 2.4rem 1.8rem 3.5rem;
     border-radius: 1.2rem;
-    top: 11rem;
+    top: 12rem;
     overflow: visible;
   }
   .game .section-layer_final .result {
     max-width: 100%;
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+    padding: 1rem 2.5rem;
     position: absolute;
-    top: -11rem;
+    top: -12rem;
   }
   .game .section-layer_final .result__waves {
     display: block;

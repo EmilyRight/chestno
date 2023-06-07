@@ -157,39 +157,39 @@ class Game extends GameView {
 
     vkShareBtn?.addEventListener('click', () => {
       vkShareBtn.href = `http://vk.com/share.php?url=${shareOptions.url}&title=${shareOptions.title}`;
-      this.closeShareModal();
+      this.closeModal();
     });
     okShareBtn?.addEventListener('click', () => {
       okShareBtn.href = `https://connect.ok.ru/offer?url=${shareOptions.url}&title=${shareOptions.title}`;
-      this.closeShareModal();
+      this.closeModal();
     });
     tgShareBtn?.addEventListener('click', () => {
       tgShareBtn.href = `https://t.me/share/url?url=${shareOptions.url}&text=${shareOptions.title}`;
-      this.closeShareModal();
+      this.closeModal();
     });
   }
 
-  openShareModal() {
-    const shareLink = document.querySelector('.result__share');
-    const shareBlock = document.querySelector('.share');
+  openModal() {
+    const modalLink = document.querySelector('.modal__link');
+    const modalBlock = document.querySelector('.modal');
     const body = document.querySelector('body');
-    shareLink?.addEventListener('click', () => {
-      shareBlock.style.display = 'flex';
+    modalLink?.addEventListener('click', () => {
+      modalBlock.style.display = 'flex';
       body.classList.add('noscroll');
     });
   }
 
-  closeShareModal() {
-    const shareBlock = document.querySelector('.share');
+  closeModal() {
+    const modalBlock = document.querySelector('.modal');
     const body = document.querySelector('body');
-    shareBlock.style.display = 'none';
+    modalBlock.style.display = 'none';
     body.classList.remove('noscroll');
   }
 
   handleClosingModal() {
-    const closeModalIcon = document.querySelector('.share__close-icon');
+    const closeModalIcon = document.querySelector('.modal__close-icon');
     closeModalIcon.addEventListener('click', () => {
-      this.closeShareModal();
+      this.closeModal();
     });
   }
 
@@ -219,7 +219,7 @@ class Game extends GameView {
     this.sectionGame.innerHTML = this.createScoreScreen(this.score);
     const scoreScreen = document.querySelector('.section-layer_final');
     scoreScreen.style.animation = fadeOutAnimation;
-    this.openShareModal();
+    this.openModal();
     this.shareWithSocialMedia();
     this.handleClosingModal();
     this.copyLink();
@@ -229,14 +229,6 @@ class Game extends GameView {
       },
       bubbles: true,
     }));
-
-    document.addEventListener('click', (event) => {
-      const modalBody = event.target.closest('.share');
-      const modal = event.target.closest('.share__wrapper');
-      if (modalBody && !modal) {
-        this.closeShareModal();
-      }
-    });
   }
 }
 

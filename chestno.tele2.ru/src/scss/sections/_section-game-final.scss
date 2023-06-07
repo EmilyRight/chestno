@@ -1,4 +1,35 @@
 .game {
+  .share {
+    &__icons {
+      display: flex;
+      gap: 2.4rem;
+      align-items: center;
+      margin-right: 2.4rem;
+    }
+
+    &__icon {
+      cursor: pointer;
+      width: 3.6rem;
+      img {
+        width: 100%;
+      }
+    }
+
+    &__copy-link {
+      font-family: $font1;
+      text-decoration: underline;
+      cursor: pointer;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    @media (max-width: 600px) {
+      &__icons {
+        margin-right: 0;
+        margin-bottom: 2.4rem;
+      }
+    }
+  }
   .section-layer {
     overflow: hidden;
     &_final {
@@ -103,15 +134,10 @@
         }
 
         &__share {
-          text-decoration: underline;
           position: relative;
           z-index: 10;
-          cursor: pointer;
           width: 100%;
           text-align: center;
-          &:hover {
-            text-decoration: none;
-          }
         }
         &__waves {
           position: absolute;
@@ -184,14 +210,13 @@
       @media (max-width: 600px) {
         padding: 2.4rem 1.8rem 3.5rem;
         border-radius: 1.2rem;
-        top: 11rem;
+        top: 12rem;
         overflow: visible;
         .result {
           max-width: 100%;
-          padding-left: 2.5rem;
-          padding-right: 2.5rem;
+          padding: 1rem 2.5rem;
           position: absolute;
-          top: -11rem;
+          top: -12rem;
           &__waves {
             display: block;
           }

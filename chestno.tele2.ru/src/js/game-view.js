@@ -41,6 +41,9 @@ class GameView extends ItemView {
             data-event="game_start" data-section="section-game-start">
               Играть
             </button>
+            <div class="box-content__link modal__link subtitle js-gtm-event">
+              Некогда играть, дайте позвонить
+            </div>
           </div>
           <div class="box-pic">
             <div class="pic-layer">
@@ -51,6 +54,29 @@ class GameView extends ItemView {
           </div>
         </div>
       </div>
+      <div class="section-layer__info info modal hidden">
+      <div class="modal__wrapper info__wrapper ">
+        <div class="info__title modal__title">
+          Звоните сколько угодно, если вы&nbsp;в&nbsp;Tele2
+        </div>
+        <p class="subtitle">
+          Подключайтесь, чтобы получить безлимит на&nbsp;звонки в&nbsp;сети
+          Tele2 и&nbsp;отдыхать спокойно
+        </p>
+        <a
+          class="btn btn-primary js-gtm-event"
+          href="https://tele2.ru/tariffs"
+          data-event="conv_connect-game"
+          data-section="section-game-start"
+          target="_blank"
+        >
+          Подключиться
+        </a>
+        <div class="modal__close-icon">
+          <span class="modal__close"></span>
+        </div>
+      </div>
+    </div>
     `;
   }
 
@@ -178,7 +204,7 @@ class GameView extends ItemView {
             data-section="section-game-score">
             Еще раз?</span>
           </div>
-          <span class="result__share js-gtm-event"
+          <span class="result__share modal__link js-gtm-event"
               data-event="btn-share"
               data-section="section-game-score">
           Поделиться</span>
@@ -250,9 +276,9 @@ class GameView extends ItemView {
         />
       </div>
       </div>
-      <div class="section-layer__share share hidden">
-      <div class="share__wrapper">
-        <div class="share__title">Поделиться результатом</div>
+      <div class="section-layer__share share modal hidden">
+      <div class="modal__wrapper share__wrapper">
+        <div class="modal__title share__title">Поделиться результатом</div>
         <div class="share__icons">
           <a
             href=""
@@ -288,8 +314,8 @@ class GameView extends ItemView {
           data-section="section-game-score"
           >Скопировать ссылку</span
         >
-        <div class="share__close-icon">
-          <span class="share__close"></span>
+        <div class="share__close-icon modal__close-icon">
+          <span class="modal__close share__close"></span>
         </div>
       </div>
     </div>

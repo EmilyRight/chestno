@@ -31,12 +31,20 @@
       border-radius: 1rem;
       margin-bottom: 2rem;
     }
+    .box-content__link {
+      font-family: $font1;
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+    }
     .box-pic {
       position: absolute;
       right: 0%;
       bottom: -0.7rem;
       z-index: 10;
       max-width: 75%;
+      pointer-events: none;
       .pic-layer {
         display: block;
         width: 100%;
@@ -53,7 +61,7 @@
       }
     }
   }
-  .share {
+  .modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -66,6 +74,13 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    &__link {
+      cursor: pointer;
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+    }
     &__wrapper {
       width: 90%;
       max-width: 66.4rem;
@@ -79,43 +94,12 @@
       border-radius: 1rem;
       box-shadow: 0px 4px 20px 0px #00000014;
     }
-
     &__title {
       font-size: 2.8rem;
       line-height: 3.6rem;
       margin-bottom: 3.6rem;
       flex-basis: 100%;
     }
-
-    &__icons {
-      display: flex;
-      gap: 2.4rem;
-      align-items: center;
-      margin-right: 2.4rem;
-    }
-
-    &__icon {
-      cursor: pointer;
-      width: 3.6rem;
-      img{
-        width: 100%;
-      }
-      &_vk {
-      }
-
-      &_оk {
-      }
-    }
-
-    &__copy-link {
-      font-family: $font1;
-      text-decoration: underline;
-      cursor: pointer;
-      &:hover {
-        text-decoration: none;
-      }
-    }
-
     &__close-icon {
       position: absolute;
       width: 2.4rem;
@@ -125,12 +109,12 @@
       top: 4rem;
       right: 4rem;
       cursor: pointer;
-      transition: .4s;
+      transition: 0.4s;
       &:hover {
         opacity: 0.5;
       }
       &:active {
-        transform: scale(.8);
+        transform: scale(0.8);
       }
     }
 
@@ -159,6 +143,15 @@
     }
     &.hidden {
       display: none;
+    }
+  }
+
+  .info {
+    &__title {
+      max-width: 60%;
+    }
+    .subtitle {
+      margin-bottom: 3.6rem;
     }
   }
 
@@ -244,7 +237,7 @@
         min-width: auto;
       }
     }
-    .share {
+    .modal {
       &__wrapper {
         flex-direction: column;
         align-items: center;
@@ -254,11 +247,7 @@
       &__title {
         font-size: 2rem;
         line-height: 2.6rem;
-      }
-
-      &__icons {
-        margin-right: 0;
-        margin-bottom: 2.4rem;
+        max-width: 100%;
       }
 
       &__close-icon {
@@ -270,7 +259,6 @@
 
       &__close {
         position: relative;
-
         width: 100%;
         &::after {
           content: "";
