@@ -1,0 +1,420 @@
+.game {
+  .section-layer_main {
+    padding: 0;
+    position: absolute;
+    top: 0rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    opacity: 1;
+    z-index: 10;
+    height: 80%;
+    overflow-y: hidden;
+    .game__screen_main {
+      background-color: #fff;
+      background-size: 105% 100%;
+      background-repeat: no-repeat;
+      background-position: center 2.5rem;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 1.8rem;
+      .game__text {
+        margin-top: 4.6rem;
+        text-align: center;
+        font-family: $font1;
+        position: relative;
+        p {
+          max-width: 55%;
+          margin: 0 auto;
+        }
+      }
+      .stats {
+        position: absolute;
+        right: 5%;
+        top: 0rem;
+        background-color: $color-light;
+        font-size: 1.6rem;
+        border-radius: 1.2rem;
+        overflow: hidden;
+
+        &__timer {
+          padding: 0.8rem 1rem;
+          gap: 0.8rem;
+          font-weight: bold;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          img {
+            width: 2rem;
+          }
+        }
+        &__time {
+          margin-top: 0.2rem;
+        }
+        &__dolphins {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          img {
+            max-width: 3rem;
+          }
+        }
+      }
+      .game__field {
+        position: relative;
+      }
+      .game-field__start-screen {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: hsla(0, 0%, 100%, 0.688);
+        height: 120%;
+        width: 100%;
+        bottom: 0;
+        z-index: 120;
+        pointer-events: none;
+        user-select: none;
+        p {
+          font-family: $font1;
+        }
+      }
+
+      .game-field__area {
+        height: calc(100% / 3);
+        position: relative;
+      }
+
+      .game-field__wave {
+        position: absolute;
+        width: 150%;
+        pointer-events: none;
+        user-select: none;
+        z-index: 0;
+        &_1 {
+          width: 150%;
+          bottom: -7rem;
+          animation: wave 20s linear infinite alternate-reverse;
+        }
+        &_2 {
+          animation: wave 18s linear infinite alternate-reverse;
+        }
+        &_3 {
+          animation: wave 17s linear infinite alternate-reverse;
+        }
+        &_4 {
+          animation: wave 16s linear infinite alternate-reverse;
+        }
+        &_5 {
+          animation: wave 17s linear infinite alternate-reverse;
+        }
+        &_6 {
+          animation: wave 13s linear infinite alternate-reverse;
+        }
+        &_7 {
+          animation: wave 19s linear infinite alternate-reverse;
+        }
+      }
+
+      //дельфины
+      .game__item {
+        position: absolute;
+        width: 20rem;
+        min-height: 100%;
+        cursor: pointer;
+        display: flex;
+        transform-origin: top right;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .dolphin {
+        position: absolute;
+        bottom: 20%;
+        width: 100%;
+        height: 100%;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+
+        &.ss {
+          .dolphin__bone {
+            height: 100%;
+            width: 40%;
+            transform: rotate(720deg);
+            transition: 0.7s ease-in-out;
+            transform-origin: 50% 50%;
+          }
+        }
+        &__image {
+          position: absolute;
+          user-select: none;
+          z-index: 100;
+        }
+        &__bone {
+          position: relative;
+          height: 100%;
+          width: 40%;
+          // border: 1px solid rgb(255, 0, 38);
+          // border: 1px solid red;
+        }
+        &__body {
+          position: relative;
+          padding-left: 15%;
+          width: 150%;
+          height: 150%;
+          animation: 5s jump linear alternate infinite;
+        }
+        &__head {
+        }
+        &__body {
+        }
+        &__tail {
+          animation: 0.55s ease-in-out tail alternate infinite;
+        }
+      }
+      .game__field {
+        margin-top: auto;
+        position: relative;
+        width: 100%;
+        height: 60%;
+        display: flex;
+        flex-direction: column;
+        &_top {
+          .game__item {
+            width: 20rem;
+            min-height: 100%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .dolphin {
+            width: 80%;
+            bottom: 0;
+            left: 2%;
+
+            &__body {
+              // border: 1px solid rgb(234, 255, 0);
+
+            }
+            &__bone {
+              position: relative;
+              height: 100%;
+              width: 40%;
+              // border: 1px solid rgb(255, 0, 38);
+              // transform: rotate(-40deg);
+            }
+            &__head,
+            &__tail {
+              background: url(../img/page/tail-top.svg) no-repeat 50% 50%;
+              display: block;
+              background-size: contain;
+              cursor: pointer;
+            }
+
+            &__head {
+              position: absolute;
+              right: -15%;
+              width: 100%;
+              height: 50%;
+              background-image: url(../img/page/head-top.svg);
+            }
+            &__tail {
+              position: absolute;
+              width: 66%;
+              height: 68%;
+              top: 6%;
+              right: 60%;
+              transform-origin: 70% 24%;
+            }
+          }
+        }
+
+        &_middle {
+          .game__item {
+            width: 20rem;
+            min-height: 100%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .dolphin {
+            width: 85%;
+            height: 100%;
+            opacity: 1;
+            &__bone {
+              position: absolute;
+              height: 100%;
+              width: 40%;
+            }
+            &__head,
+            &__tail {
+              background: url(../img/page/tail-bottom.svg) no-repeat 50% 50%;
+              display: block;
+              background-size: contain;
+              cursor: pointer;
+            }
+
+            &__head {
+              position: absolute;
+              right: -15%;
+              width: 100%;
+              height: 50%;
+              background-image: url(../img/page/head-bottom.svg);
+            }
+            &__tail {
+              position: absolute;
+              width: 67%;
+              height: 67%;
+              top: 9%;
+              right: 58%;
+              transform-origin: 70% 24%;
+            }
+          }
+        }
+
+        &_bottom {
+          .game__item {
+            width: 20rem;
+            min-height: 100%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .dolphin {
+            width: 100%;
+            height: 100%;
+            &__bone {
+              position: relative;
+              height: 100%;
+              width: 40%;
+
+              // transform: rotate(-40deg);
+            }
+            &__head,
+            &__tail {
+              background: url(../img/page/tail-bottom.svg) no-repeat 50% 50%;
+              display: block;
+              background-size: contain;
+              cursor: pointer;
+            }
+
+            &__head {
+              position: absolute;
+              right: -15%;
+              top: 0%;
+              width: 100%;
+              height: 50%;
+              background-image: url(../img/page/head-bottom.svg);
+            }
+            &__tail {
+              position: absolute;
+              width: 75%;
+              height: 59%;
+              top: 13.2%;
+              left: -27%;
+              transform-origin: 70% 24%;
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 600px) {
+      height: 93%;
+      max-width: 95%;
+      .game__screen_main {
+        background-size: 200% 100%;
+        min-height: 51.6rem;
+        .game__text {
+          margin-top: 0;
+          padding-top: 6.2rem;
+          p {
+            max-width: 90%;
+          }
+        }
+        .stats {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          padding: 0 1rem;
+          right: auto;
+          left: 50%;
+          transform: translate(-50%, 0);
+          top: 1.8rem;
+        }
+        .game__field {
+          height: 60%;
+          .game__item {
+            .dolphin {
+              bottom: 5%;
+              &__body {
+                padding-left: 10%;
+                width: 90%;
+                height: 95%;
+              }
+            }
+          }
+        }
+
+        .game-field__wave {
+          &_1 {
+            bottom: -1rem;
+            z-index: 5;
+            height: 105%;
+          }
+          &_2 {
+            height: 150%;
+            bottom: -0rem;
+            z-index: 4;
+          }
+          &_3 {
+            z-index: 1;
+            bottom: -7rem;
+          }
+          &_4 {
+            bottom: -2rem;
+            z-index: 0;
+          }
+          // &_5 {
+          //   bottom: -2rem;
+          // }
+          // &_6 {
+          //   bottom: -3rem;
+          // }
+          // &_7 {
+          //   bottom: -10rem;
+          // }
+        }
+      }
+    }
+  }
+}
+@keyframes tail {
+  0% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(-8deg);
+  }
+}
+
+// @keyframes jump {
+//   0% {
+//   }
+//   60% {
+//     transform: translateX(50%) translateY(-60%) rotate(0deg);
+//   }
+//   98% {
+//     transform: translateX(60%) translateY(0) rotate(70deg);
+//     opacity: 1;
+//   }
+//   100% {
+//     transform: translateX(65%) translateY(20%) rotate(70deg);
+//     // opacity: 0;
+//   }
+// }

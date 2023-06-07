@@ -1,0 +1,266 @@
+.game {
+  .section-layer {
+    overflow: hidden;
+    &_final {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 4.4rem 8.4rem 6rem;
+      background-color: #fff;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 1;
+      opacity: 0;
+
+      .box-content {
+        max-width: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        &__title {
+          max-width: 100%;
+        }
+
+        &__text {
+          max-width: 70%;
+          p {
+            margin-bottom: 3rem;
+          }
+          a:hover {
+            text-decoration: none;
+          }
+        }
+      }
+      .btn {
+        max-width: 20.2rem;
+        padding: 1.9rem 2.7rem;
+        margin-bottom: 0rem;
+      }
+      .btn-primary {
+        padding: 1.9rem 4.5rem;
+        margin-bottom: 2.4rem;
+      }
+      .result {
+        display: flex;
+        background-color: #fff;
+        border: 0.2rem solid $color-blue;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2.3rem 5.2rem;
+        width: 48.6rem;
+        max-width: 55%;
+        border-radius: 1.2rem;
+        font-family: $font1;
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+        margin-bottom: 3.6rem;
+        background-repeat: no-repeat;
+        background-size: 110% 100%;
+        background-position: -2rem 2rem;
+        position: relative;
+        overflow: hidden;
+        z-index: 10;
+        flex-wrap: wrap;
+        &__statistics {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          flex-basis: 100%;
+        }
+        &__icon {
+          max-width: 8rem;
+        }
+        &__play {
+          text-decoration: underline;
+          position: relative;
+          z-index: 10;
+          cursor: pointer;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+        &__score {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          z-index: 10;
+        }
+
+        &__number {
+          font-size: 3.8rem;
+          line-height: 4.2rem;
+          font-weight: 700;
+          position: relative;
+          z-index: 10;
+        }
+
+        &__share {
+          text-decoration: underline;
+          position: relative;
+          z-index: 10;
+          cursor: pointer;
+          width: 100%;
+          text-align: center;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+        &__waves {
+          position: absolute;
+          height: 2rem;
+          bottom: -0rem;
+          left: 0;
+          height: 90%;
+          width: 100%;
+          z-index: 0;
+          display: none;
+        }
+        &__wave {
+          width: 150%;
+          height: 120%;
+          position: absolute;
+          z-index: 0;
+          pointer-events: none;
+        }
+        &__wave_1 {
+          bottom: -4rem;
+          animation: wave 10s linear infinite alternate-reverse;
+        }
+        &__wave_2 {
+          bottom: -6rem;
+          animation: wave 6s linear infinite alternate-reverse;
+        }
+        &__wave_3 {
+          width: 150%;
+          position: absolute;
+          animation: wave 12s linear infinite alternate-reverse;
+        }
+      }
+
+      @media (max-width: $tablet) {
+        padding: 3.6rem 1rem;
+
+        border-radius: 1.2rem;
+        .box-content {
+          max-width: 100%;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          &__title {
+            margin-bottom: 2.4rem;
+          }
+
+          &__text {
+            max-width: 70%;
+          }
+          &__text p,
+          &__text p:last-of-type {
+            margin-bottom: 2.4rem;
+          }
+          .btn-primary {
+            margin-bottom: 1.8rem;
+          }
+        }
+        .btn {
+          position: relative;
+          z-index: 100;
+          min-width: 21.2rem;
+          padding: 1.3rem 2.7rem;
+          margin-bottom: 0rem;
+        }
+      }
+
+      @media (max-width: 600px) {
+        padding: 2.4rem 1.8rem 3.5rem;
+        border-radius: 1.2rem;
+        top: 11rem;
+        overflow: visible;
+        .result {
+          max-width: 100%;
+          padding-left: 2.5rem;
+          padding-right: 2.5rem;
+          position: absolute;
+          top: -11rem;
+          &__waves {
+            display: block;
+          }
+        }
+        .box-content {
+          max-width: 100%;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          &__title {
+            margin-bottom: 2.4rem;
+            text-align: center;
+          }
+
+          &__text {
+            max-width: 100%;
+          }
+          &__text p,
+          &__text p:last-of-type {
+            font-size: 1.6rem;
+            line-height: 2.2rem;
+            margin-bottom: 2.4rem;
+            text-align: center;
+          }
+          .btn-primary {
+            margin-bottom: 1.8rem;
+          }
+        }
+        .btn {
+          min-width: 21.2rem;
+          padding: 1.3rem 2.7rem;
+          margin-bottom: 0rem;
+        }
+      }
+    }
+    &__waves {
+      position: absolute;
+      bottom: -0rem;
+      left: 0;
+      height: 30%;
+      width: 100%;
+      z-index: -1;
+      @media (max-width: 600px) {
+        display: none;
+      }
+    }
+    &__wave {
+      width: 150%;
+      height: 120%;
+      position: absolute;
+      z-index: 0;
+      pointer-events: none;
+    }
+    &__wave_1 {
+      bottom: -4rem;
+      animation: wave 10s linear infinite alternate-reverse;
+    }
+    &__wave_2 {
+      bottom: -8rem;
+      animation: wave 6s linear infinite alternate-reverse;
+    }
+    &__wave_3 {
+      bottom: -12rem;
+      width: 150%;
+      position: absolute;
+      animation: wave 12s linear infinite alternate-reverse;
+    }
+  }
+}
