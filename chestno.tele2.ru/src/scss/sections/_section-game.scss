@@ -377,31 +377,42 @@
         .game-field__wave {
           // max-height: 60rem;
           height: 300%;
-          width: 550%;
+          width: 490%;
           &_1 {
-            bottom: -18rem;
+
+            bottom: -15rem;
             z-index: 5;
           }
           &_2 {
             // height: 150%;
+
             bottom: -12rem;
             z-index: 4;
           }
           &_3 {
-            bottom: -15rem;
+            height: 330%;
+
+            bottom: -16rem;
           }
           &_4 {
-            bottom: -15rem;
+
+            bottom: -16rem;
             z-index: 0;
           }
           &_5 {
-            bottom: -18rem;
+            height: 370%;
+
+            bottom: -28rem;
           }
           &_6 {
-            bottom: -21rem;
+            height: 360%;
+
+            bottom: -25rem;
           }
           &_7 {
-            bottom: -24rem;
+            height: 350%;
+
+            bottom: -27rem;
           }
         }
       }
