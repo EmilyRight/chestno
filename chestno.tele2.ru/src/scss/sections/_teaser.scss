@@ -36,8 +36,11 @@
       margin: 0;
       display: block;
       object-fit: cover;
-      max-height: 30vh;
-      min-height: 50rem;
+      // max-height: 30vh;
+      // min-height: 50rem;
+      max-height: 60vh;
+      min-height: 56rem;
+      height: 50vw;
       &.video-mobile {
         display: none;
       }

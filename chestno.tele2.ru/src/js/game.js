@@ -112,9 +112,11 @@ class Game extends GameView {
     for (let i = 0; i < randomNumberForMiddle; i += 1) {
       this.createGameItems(this.middleBlock, middleGameItem);
     }
-
+    const randomNumberForLarge = Math.floor(Math.random() * 2);
     const largeGameItem = this.createLargeImage();
-    this.createGameItems(this.bottomBlock, largeGameItem);
+    for (let i = 0; i < randomNumberForLarge; i += 1) {
+      this.createGameItems(this.bottomBlock, largeGameItem);
+    }
   }
 
   initField() {
