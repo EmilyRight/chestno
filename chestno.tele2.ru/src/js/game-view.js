@@ -82,13 +82,7 @@ class GameView extends ItemView {
 
   createGameScreen(seconds) {
     const clocksSrc = require('../img/icons/clock.png');
-    const waveImg1 = require('../img/page/wave1.png');
-    const waveImg2 = require('../img/page/wave2.png');
-    const waveImg3 = require('../img/page/wave3.png');
-    const waveImg4 = require('../img/page/wave4.png');
-    const waveImg5 = require('../img/page/wave5.png');
-    const waveImg6 = require('../img/page/wave6.png');
-    const waveImg7 = require('../img/page/wave7.png');
+    const waveImg6 = require('../img/page/final-wave.png');
     return html`
       <div class="section-layer section-layer_main">
         <div class="game__screen game__screen_main">
@@ -157,36 +151,6 @@ class GameView extends ItemView {
     `;
   }
 
-  // shareWithSocialMedia() {
-  //   const vkShareBtn = document.querySelector('.share__icon_vk');
-  //   const okShareBtn = document.querySelector('.share__icon_ok');
-  //   const score = game.getScore();
-  //   const shareOptions = {
-  //     url: 'url',
-  //     title: `Я поймал ${score} дельфинов, а ты?`,
-  //   };
-  //   vkShareBtn.addEventListener('click', () => {
-  //     vkShareBtn.href = `http://vk.com/share.php?url=${shareOptions.url}&title=${shareOptions.title}`;
-  //   });
-  //   okShareBtn.addEventListener('click', () => {
-  //     okShareBtn.href = `https://connect.ok.ru/offer?url=${shareOptions.url}&title=${shareOptions.title}`;
-  //   });
-  // }
-
-  // openShareModal() {
-  //   const shareLink = document.querySelector('.share');
-  //   shareLink.addEventListener('click', () => {
-  //     shareLink.classList.remove('hidden');
-  //   });
-  // }
-
-  // closeShareModal() {
-  //   const shareLink = document.querySelector('.share');
-  //   const closeIcon = document.querySelector('.share__close-icon');
-  //   closeIcon.addEventListener('click', () => {
-  //     shareLink.classList.add('hidden');
-  //   });
-  // }
 
   createScoreScreen(score) {
     const waveImg3 = require('../img/page/final-wave.png');

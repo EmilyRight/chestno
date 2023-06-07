@@ -82,7 +82,7 @@ class Game extends GameView {
         }
         if (this.seconds === 0) {
           clearInterval(timer);
-          this.stopGame();
+          // this.stopGame();
         }
       }, 1000);
     }
