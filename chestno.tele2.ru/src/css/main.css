@@ -901,19 +901,22 @@ body .page {
 @media (max-width: 600px) {
   .platform_ios .teaser .video-layer {
     background: url("../video/fallback-ios-vertical.jpg") no-repeat;
+    background-size: cover;
+    background-position: 0% 55%;
   }
 }
 .teaser .video-layer {
   overflow: hidden;
+  max-height: 60vh;
+  min-height: 56rem;
+  height: 50vw;
 }
 .teaser .video-layer video {
   position: relative;
   margin: 0;
   display: block;
   object-fit: cover;
-  max-height: 60vh;
-  min-height: 56rem;
-  height: 50vw;
+  min-height: 100%;
 }
 .teaser .video-layer video.video-mobile {
   display: none;
@@ -1007,9 +1010,10 @@ body .page {
   }
   .teaser .video-layer {
     max-width: 100%;
+    min-height: 40rem;
   }
   .teaser .video-layer video {
-    min-height: 40rem;
+    height: 100%;
   }
   .teaser .video-layer video.video-desktop {
     display: none;

@@ -179,6 +179,7 @@ class Game extends GameView {
     modalLink?.addEventListener('click', () => {
       modalBlock.style.display = 'flex';
       body.classList.add('noscroll');
+      this.resetInnerHtml();
     });
   }
 
@@ -214,6 +215,13 @@ class Game extends GameView {
     this.score = 0;
   }
 
+  resetInnerHtml() {
+    const shareBlock = document.querySelector('.share__copy-link');
+    if (shareBlock) {
+      shareBlock.innerHTML = 'Скопировать ссылку';
+    }
+  }
+
   exitGame() {
     const exitButton = document.querySelector('.exit-game');
     exitButton.addEventListener('click', () => {
@@ -229,10 +237,12 @@ class Game extends GameView {
     this.sectionGame.innerHTML = this.createScoreScreen(this.score);
     const scoreScreen = document.querySelector('.section-layer_final');
     scoreScreen.style.animation = fadeOutAnimation;
+
     this.openModal();
     this.shareWithSocialMedia();
     this.handleClosingModal();
     this.copyLink();
+
     document.dispatchEvent(new CustomEvent('endGame', {
       detail: {
         isEnded: true,
