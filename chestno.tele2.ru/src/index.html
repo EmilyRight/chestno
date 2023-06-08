@@ -105,11 +105,11 @@
 
     <meta
       property="og:image"
-      content="https://chestno.tele2.ru/src/img/preview-og-chestno.jpg"
+      content="https://chestno.tele2.ru/src/img/preview-og_chestno.jpg"
     />
     <meta
       property="og:image:secure_url"
-      content="https://chestno.tele2.ru/src/img/preview-og-chestno.jpg"
+      content="https://chestno.tele2.ru/src/img/preview-og_chestno.jpg"
     />
     <meta property="og:image:width" content="968" />
     <meta property="og:image:height" content="504" />
@@ -127,15 +127,15 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:image:src"
-      content="https://chestno.tele2.ru/src/img/preview-og.jpg"
+      content="https://chestno.tele2.ru/src/img/preview-og_chestno.jpg"
     />
     <link
       rel="image_src"
-      href="https://chestno.tele2.ru/src/img/preview-og.jpg"
+      href="https://chestno.tele2.ru/src/img/preview-og_chestno.jpg"
     />
     <meta
       name="twitter:image"
-      content="https://chestno.tele2.ru/src/img/preview-og.jpg"
+      content="https://chestno.tele2.ru/src/img/preview-og_chestno.jpg"
     />
 
     <meta
@@ -156,12 +156,13 @@
             loop
             muted
             playsinline
+            poster="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAYAAADaxo44AAAAk0lEQVQImR2OuRHCQBDAtHuLDcYMhHRARHU0RSmkdAABKZHHd76XwamkQPK83xpArRVVQUQptWDObVHVVYjIv0FoWM5KjHGFIQRUlHn22Pv1IeeMmaM12O0GUizY6ThQSsV7j4qgUtj2hg3jgSVF3GazCjHD1LDz5UoKnn4/4rqOuiw4c0j7Phph+a/QasVPEzElfsuFQb3gACnsAAAAAElFTkSuQmCC"
           >
             <source
               class="video-source"
               type="video/mp4"
               id="video-mobile"
-              src="./video/video_mobile.mp4"
+              src="./video/video-sm.h264.mp4"
             />
           </video>
           <video
@@ -172,11 +173,12 @@
             loop
             muted
             playsinline
+            poster="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAADCAYAAACuyE5IAAAAWklEQVQImR3KMQrDMAxA0S8jEbAXgzfftFfqcXqPZkgGJ3KqFLI+nnzerzsiSCkhGH4463cj50xrDXV3zIwxBvu2sthCrZVSCnNOtPf+bBHhPH7EFUy/H1NV/hX+IZEdkVaBAAAAAElFTkSuQmCC"
           >
             <source
               class="video-source video-desktop"
               id="video-desktop"
-              src="./video/video1280.h264.mp4"
+              src="./video/video.h264.mp4"
               type="video/mp4"
             />
           </video>
@@ -586,13 +588,8 @@
             <div class="box-pic__frame">
               <picture>
                 <source
-                  srcset="./img/page/phone-mobile.png"
-                  media="(max-width: 600px)"
-                />
-
-                <source
                   srcset="./img/page/phone-mobile@2x.png"
-                  media="(max-width: 600px) and (min-resolution: 2dppx)"
+                  media="(max-width: 600px)"
                 />
                 <img
                   class="wow fadeIn"

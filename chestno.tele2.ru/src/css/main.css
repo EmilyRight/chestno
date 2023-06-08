@@ -887,7 +887,7 @@ body .page {
   display: block;
 }
 .platform_ios .teaser .video-layer {
-  background: url("../video/fallback-ios@2x.jpg") no-repeat;
+  background: url("../video/fallback-ios.jpg") no-repeat;
   background-size: 120%;
   background-position: 50% 0;
 }
@@ -897,6 +897,11 @@ body .page {
 }
 .platform_ios .teaser .video-layer video.is_started {
   opacity: 1;
+}
+@media (max-width: 600px) {
+  .platform_ios .teaser .video-layer {
+    background: url("../video/fallback-ios-vertical.jpg") no-repeat;
+  }
 }
 .teaser .video-layer {
   overflow: hidden;
@@ -937,7 +942,7 @@ body .page {
 }
 .teaser-body__text {
   color: #fff;
-  padding-bottom: 4.5rem;
+  padding-bottom: 6.3rem;
   text-shadow: 0 0 0.8em rgba(0, 0, 0, 0.3);
 }
 .teaser-body__text .bigtext {

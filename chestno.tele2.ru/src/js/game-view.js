@@ -65,7 +65,7 @@ class GameView extends ItemView {
         </div>
         <p class="subtitle">
         Подключайтесь, чтобы получить безлимит на&nbsp;звонки в&nbsp;сети Tele2 по&nbsp;<a
-        class="js-gtm-event"
+        class="js-gtm-event text-link"
         data-event="text-link_rissia"
         data-section="section-game-score"
         href="https://tele2.ru/promotions/article/spisok-regionov"
@@ -217,7 +217,7 @@ class GameView extends ItemView {
                 С&nbsp;Tele2 можно ни&nbsp;о&nbsp;чем
                 не&nbsp;переживать&nbsp;&mdash; ваши минуты не&nbsp;потратятся
                 при звонках внутри сети по&nbsp;<a
-                class="js-gtm-event"
+                class="js-gtm-event text-link"
                 data-event="text-link_rissia"
                 data-section="section-game-score"
                 href="https://tele2.ru/promotions/article/spisok-regionov"

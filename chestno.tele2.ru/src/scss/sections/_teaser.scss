@@ -16,7 +16,7 @@
   //ios saving mode fix
   .platform_ios & {
     .video-layer {
-      background: url("../video/fallback-ios@2x.jpg") no-repeat;
+      background: url("../video/fallback-ios.jpg") no-repeat;
       background-size: 120%;
       background-position: 50% 0;
       video {
@@ -25,6 +25,11 @@
         &.is_started {
           opacity: 1;
         }
+      }
+    }
+    @media (max-width: 600px) {
+      .video-layer {
+        background: url("../video/fallback-ios-vertical.jpg") no-repeat;
       }
     }
   }
@@ -71,7 +76,7 @@
     margin-bottom: -1px; //fix adjusted size display
     &__text {
       color: #fff;
-      padding-bottom: 4.5rem;
+      padding-bottom: 6.3rem;
       text-shadow: 0 0 0.8em rgba(0, 0, 0, 0.3);
 
       .bigtext {
