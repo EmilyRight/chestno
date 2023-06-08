@@ -94,9 +94,9 @@ class Game extends GameView {
     const coords = this.createRandomPosition(gameArea, gameItemHtml);
     gameItemHtml.style.bottom = `${coords.bottom}px`;
     gameItemHtml.style.left = `${coords.left}px`;
-    gameArea.appendChild(gameItemHtml);
+    gameArea.append(gameItemHtml);
+    console.log('append', gameItemHtml);
     gameItem.playAnimation();
-    clearTimeout(this.createItemTimeout);
   }
 
   createField() {
@@ -108,23 +108,21 @@ class Game extends GameView {
     }
 
     const randomNumberForMiddle = Math.floor(Math.random() * 3);
-    const middleGameItem = this.createMiddleImage();
     for (let i = 0; i < randomNumberForMiddle; i += 1) {
+      const middleGameItem = this.createMiddleImage();
       this.createGameItems(this.middleBlock, middleGameItem);
     }
-    const randomNumberForLarge = Math.floor(Math.random() * 2);
+
     const largeGameItem = this.createLargeImage();
-    for (let i = 0; i < randomNumberForLarge; i += 1) {
-      this.createGameItems(this.bottomBlock, largeGameItem);
-    }
+    this.createGameItems(this.bottomBlock, largeGameItem);
   }
 
   initField() {
     if (this.gameIsOn === true) {
-      clearTimeout(this.createItemTimeout);
       clearInterval(this.initFieldInterval);
       this.createField();
       this.initFieldInterval = setInterval(() => {
+        clearTimeout(this.createItemTimeout);
         this.createField();
       }, 3000);
     }
