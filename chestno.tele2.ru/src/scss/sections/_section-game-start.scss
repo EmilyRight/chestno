@@ -65,7 +65,7 @@
       img {
         display: block;
         width: 100%;
-        max-height: 55rem;
+        max-width: 65rem;
       }
     }
   }
@@ -209,11 +209,11 @@
       .box-pic {
         max-width: 100%;
         z-index: -1;
-        bottom: -7rem;
+        bottom: -5rem;
         img {
           display: block;
           width: 100%;
-          max-height: 40rem;
+          max-width: 50rem;
         }
       }
       .box-content__disclaimer {

@@ -45,7 +45,7 @@ class GameView extends ItemView {
               <div class="box-content__link modal__link subtitle js-gtm-event"
               data-event="let-me-in"
               data-section="section-game-start">
-                Некогда играть, дайте позвонить
+                Хочу так же
               </div>
             </div>
           </div>
@@ -108,6 +108,12 @@ class GameView extends ItemView {
                   00:<span class="stats__seconds">${seconds}</span>
                 </div>
               </div>
+              <span
+                class="text-link exit-game js-gtm-event"
+                data-event="game_exit"
+                data-section="section-game"
+                >Закрыть</span
+              >
             </div>
           </div>
           <div class="game__field game-field">

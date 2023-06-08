@@ -109,7 +109,7 @@ function showHiddenBlocks() {
 function endGame() {
   clearTimeout(screensAnimation);
   endGameEventPush();
-  showHiddenBlocks();
+  // showHiddenBlocks();
 }
 
 function endGameEventPush() {

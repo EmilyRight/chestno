@@ -138,6 +138,7 @@ class Game extends GameView {
     this.gameIsOn = true;
     this.initField();
     this.setTimer();
+    this.exitGame();
   }
 
   shareWithSocialMedia() {
@@ -211,6 +212,13 @@ class Game extends GameView {
   resetGame() {
     this.seconds = 30;
     this.score = 0;
+  }
+
+  exitGame() {
+    const exitButton = document.querySelector('.exit-game');
+    exitButton.addEventListener('click', () => {
+      this.stopGame();
+    });
   }
 
   stopGame() {
