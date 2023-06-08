@@ -95,57 +95,26 @@
         z-index: 0;
         &_1 {
           width: 150%;
-          // max-height: 25rem;
-
-          bottom: -8rem;
-          animation: wave 25s linear infinite alternate-reverse;
-          filter: brightness(80%) saturate(100%) invert(53%) sepia(73%)
-            saturate(576%) hue-rotate(149deg) brightness(86%) contrast(89%);
+          bottom: -7rem;
+          animation: wave 20s linear infinite alternate-reverse;
         }
         &_2 {
-          width: 170%;
-          bottom: -18rem;
-          z-index: 10;
-          // max-height: 35rem;
-          animation: wave 20s linear infinite alternate-reverse;
-          filter: brightness(10%) saturate(100%) invert(63%) sepia(64%)
-            saturate(2500%) hue-rotate(161deg) brightness(94%) contrast(100%);
-          animation: wave 8s linear infinite alternate-reverse;
+          animation: wave 18s linear infinite alternate-reverse;
         }
         &_3 {
-
-          bottom: -15rem;
-          filter: brightness(0) saturate(100%) invert(78%) sepia(24%)
-            saturate(800%) hue-rotate(169deg) brightness(95%) contrast(102%);
-          animation: wave 15s linear infinite alternate-reverse;
+          animation: wave 17s linear infinite alternate-reverse;
         }
         &_4 {
-          width: 200%;
-          bottom: -17rem;
-          filter: brightness(-20%) saturate(100%) invert(76%) sepia(69%)
-            saturate(4819%) hue-rotate(168deg) brightness(106%) contrast(101%);
-          animation: wave 10s linear infinite alternate-reverse;
+          animation: wave 16s linear infinite alternate-reverse;
         }
         &_5 {
-          width: 220%;
-          bottom: -28rem;
-          filter: brightness(10%) saturate(100%) invert(87%) sepia(11%)
-            saturate(1211%) hue-rotate(171deg) brightness(101%) contrast(104%);
-          animation: wave 5s linear infinite alternate-reverse;
+          animation: wave 17s linear infinite alternate-reverse;
         }
         &_6 {
-          width: 240%;
-          bottom: -31rem;
-          filter: brightness(20%) saturate(100%) invert(76%) sepia(69%)
-            saturate(4819%) hue-rotate(168deg) brightness(106%) contrast(101%);
           animation: wave 13s linear infinite alternate-reverse;
         }
         &_7 {
-          width: 240%;
-          bottom: -30rem;
-          // max-height: 20rem;
-          left: -3rem;
-          animation: wave 10s linear 1s infinite alternate-reverse;
+          animation: wave 19s linear infinite alternate-reverse;
         }
       }
 
@@ -375,44 +344,23 @@
         }
 
         .game-field__wave {
-          // max-height: 60rem;
-          height: 300%;
-          width: 490%;
           &_1 {
-
-            bottom: -15rem;
+            bottom: -1rem;
             z-index: 5;
+            height: 105%;
           }
           &_2 {
-            // height: 150%;
-
-            bottom: -12rem;
+            height: 150%;
+            bottom: -0rem;
             z-index: 4;
           }
           &_3 {
-            height: 330%;
-
-            bottom: -16rem;
+            z-index: 1;
+            bottom: -7rem;
           }
           &_4 {
-
-            bottom: -16rem;
+            bottom: -2rem;
             z-index: 0;
-          }
-          &_5 {
-            height: 370%;
-
-            bottom: -28rem;
-          }
-          &_6 {
-            height: 360%;
-
-            bottom: -25rem;
-          }
-          &_7 {
-            height: 350%;
-
-            bottom: -27rem;
           }
         }
       }

@@ -1065,7 +1065,7 @@ body .page {
   min-height: 35rem;
 }
 .game .section-layer_initial {
-  padding: 6rem 8.4rem;
+  padding: 6rem 8.4rem 10.4rem;
   background-color: #fff;
   position: relative;
   z-index: 1;
@@ -1086,6 +1086,14 @@ body .page {
 }
 .game .section-layer_initial .box-content__link:hover {
   text-decoration: none;
+}
+.game .section-layer_initial .box-content__buttons {
+  display: flex;
+  align-items: center;
+}
+.game .section-layer_initial .box-content__buttons .btn {
+  margin: 0;
+  margin-right: 2.4rem;
 }
 .game .section-layer_initial .box-pic {
   position: absolute;
@@ -1210,7 +1218,7 @@ body .page {
     min-height: 55.6rem;
   }
   .game .section-layer {
-    padding: 3.6rem 2.2rem;
+    padding: 3.6rem 2.2rem 5.4rem;
     max-width: 90.4%;
   }
   .game .section-layer .box-pic {
@@ -1272,6 +1280,15 @@ body .page {
   .game .section-layer .box-content__text p:last-of-type {
     margin-bottom: 1.8rem;
   }
+  .game .section-layer .box-content__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .game .section-layer .box-content__buttons .btn {
+    margin: 0;
+    margin-bottom: 2.4rem;
+  }
   .game .section-layer .btn {
     padding: 1.3rem 3.5rem;
     min-width: auto;
@@ -1280,6 +1297,7 @@ body .page {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
   }
   .game .modal__title {
     font-size: 2rem;
@@ -1313,6 +1331,13 @@ body .page {
     width: 100%;
     top: 0rem;
     transform: rotate(45deg);
+  }
+  .game .info__title {
+    font-weight: 700;
+    margin-bottom: 2.4rem;
+  }
+  .game .info .subtitle {
+    margin-bottom: 2.4rem;
   }
 }
 
@@ -1412,46 +1437,26 @@ body .page {
 }
 .game .section-layer_main .game__screen_main .game-field__wave_1 {
   width: 150%;
-  bottom: -8rem;
-  animation: wave 25s linear infinite alternate-reverse;
-  filter: brightness(80%) saturate(100%) invert(53%) sepia(73%) saturate(576%) hue-rotate(149deg) brightness(86%) contrast(89%);
+  bottom: -7rem;
+  animation: wave 20s linear infinite alternate-reverse;
 }
 .game .section-layer_main .game__screen_main .game-field__wave_2 {
-  width: 170%;
-  bottom: -18rem;
-  z-index: 10;
-  animation: wave 20s linear infinite alternate-reverse;
-  filter: brightness(10%) saturate(100%) invert(63%) sepia(64%) saturate(2500%) hue-rotate(161deg) brightness(94%) contrast(100%);
-  animation: wave 8s linear infinite alternate-reverse;
+  animation: wave 18s linear infinite alternate-reverse;
 }
 .game .section-layer_main .game__screen_main .game-field__wave_3 {
-  bottom: -15rem;
-  filter: brightness(0) saturate(100%) invert(78%) sepia(24%) saturate(800%) hue-rotate(169deg) brightness(95%) contrast(102%);
-  animation: wave 15s linear infinite alternate-reverse;
+  animation: wave 17s linear infinite alternate-reverse;
 }
 .game .section-layer_main .game__screen_main .game-field__wave_4 {
-  width: 200%;
-  bottom: -17rem;
-  filter: brightness(-20%) saturate(100%) invert(76%) sepia(69%) saturate(4819%) hue-rotate(168deg) brightness(106%) contrast(101%);
-  animation: wave 10s linear infinite alternate-reverse;
+  animation: wave 16s linear infinite alternate-reverse;
 }
 .game .section-layer_main .game__screen_main .game-field__wave_5 {
-  width: 220%;
-  bottom: -28rem;
-  filter: brightness(10%) saturate(100%) invert(87%) sepia(11%) saturate(1211%) hue-rotate(171deg) brightness(101%) contrast(104%);
-  animation: wave 5s linear infinite alternate-reverse;
+  animation: wave 17s linear infinite alternate-reverse;
 }
 .game .section-layer_main .game__screen_main .game-field__wave_6 {
-  width: 240%;
-  bottom: -31rem;
-  filter: brightness(20%) saturate(100%) invert(76%) sepia(69%) saturate(4819%) hue-rotate(168deg) brightness(106%) contrast(101%);
   animation: wave 13s linear infinite alternate-reverse;
 }
 .game .section-layer_main .game__screen_main .game-field__wave_7 {
-  width: 240%;
-  bottom: -30rem;
-  left: -3rem;
-  animation: wave 10s linear 1s infinite alternate-reverse;
+  animation: wave 19s linear infinite alternate-reverse;
 }
 .game .section-layer_main .game__screen_main .game__item {
   position: absolute;
@@ -1651,37 +1656,23 @@ body .page {
     width: 90%;
     height: 95%;
   }
-  .game .section-layer_main .game__screen_main .game-field__wave {
-    height: 300%;
-    width: 490%;
-  }
   .game .section-layer_main .game__screen_main .game-field__wave_1 {
-    bottom: -15rem;
+    bottom: -1rem;
     z-index: 5;
+    height: 105%;
   }
   .game .section-layer_main .game__screen_main .game-field__wave_2 {
-    bottom: -12rem;
+    height: 150%;
+    bottom: 0rem;
     z-index: 4;
   }
   .game .section-layer_main .game__screen_main .game-field__wave_3 {
-    height: 330%;
-    bottom: -16rem;
+    z-index: 1;
+    bottom: -7rem;
   }
   .game .section-layer_main .game__screen_main .game-field__wave_4 {
-    bottom: -16rem;
+    bottom: -2rem;
     z-index: 0;
-  }
-  .game .section-layer_main .game__screen_main .game-field__wave_5 {
-    height: 370%;
-    bottom: -28rem;
-  }
-  .game .section-layer_main .game__screen_main .game-field__wave_6 {
-    height: 360%;
-    bottom: -25rem;
-  }
-  .game .section-layer_main .game__screen_main .game-field__wave_7 {
-    height: 350%;
-    bottom: -27rem;
   }
 }
 

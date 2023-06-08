@@ -36,13 +36,17 @@ class GameView extends ItemView {
                 мы&nbsp;спасаем вас от&nbsp;лишних&nbsp;трат.
               </p>
             </div>
-            <button type="button"
-            class="btn btn-primary start-game js-gtm-event"
-            data-event="game_start" data-section="section-game-start">
-              Играть
-            </button>
-            <div class="box-content__link modal__link subtitle js-gtm-event">
-              Некогда играть, дайте позвонить
+            <div class="box-content__buttons">
+              <button type="button"
+              class="btn btn-primary start-game js-gtm-event"
+              data-event="game_start" data-section="section-game-start">
+                Играть
+              </button>
+              <div class="box-content__link modal__link subtitle js-gtm-event"
+              data-event="let-me-in"
+              data-section="section-game-start">
+                Некогда играть, дайте позвонить
+              </div>
             </div>
           </div>
           <div class="box-pic">
@@ -66,7 +70,7 @@ class GameView extends ItemView {
         <a
           class="btn btn-primary js-gtm-event"
           href="https://tele2.ru/tariffs"
-          data-event="conv_connect-game"
+          data-event="conv_connect-before"
           data-section="section-game-start"
           target="_blank"
         >
@@ -82,7 +86,13 @@ class GameView extends ItemView {
 
   createGameScreen(seconds) {
     const clocksSrc = require('../img/icons/clock.png');
-    const waveImg6 = require('../img/page/final-wave.png');
+    const waveImg1 = require('../img/page/wave1.png');
+    const waveImg2 = require('../img/page/wave2.png');
+    const waveImg3 = require('../img/page/wave3.png');
+    const waveImg4 = require('../img/page/wave4.png');
+    const waveImg5 = require('../img/page/wave5.png');
+    const waveImg6 = require('../img/page/wave6.png');
+    const waveImg7 = require('../img/page/wave7.png');
     return html`
       <div class="section-layer section-layer_main">
         <div class="game__screen game__screen_main">
@@ -106,7 +116,7 @@ class GameView extends ItemView {
             </div>
             <div class="game-field__area game__field_top">
               <img
-                src=${waveImg6}
+                src=${waveImg5}
                 alt=""
                 class="game-field__wave game-field__wave_5"
               />
@@ -116,31 +126,31 @@ class GameView extends ItemView {
                 class="game-field__wave game-field__wave_6"
               />
               <img
-              src=${waveImg6}
+              src=${waveImg7}
                 alt=""
                 class="game-field__wave game-field__wave_7"
               />
             </div>
             <div class="game-field__area game__field_middle">
               <img
-              src=${waveImg6}
+              src=${waveImg3}
                 alt=""
                 class="game-field__wave game-field__wave_3"
               />
               <img
-              src=${waveImg6}
+              src=${waveImg4}
                 alt=""
                 class="game-field__wave game-field__wave_4"
               />
             </div>
             <div class="game-field__area game__field_bottom">
               <img
-              src=${waveImg6}
+              src=${waveImg1}
                 alt=""
                 class="game-field__wave game-field__wave_1"
               />
               <img
-              src=${waveImg6}
+              src=${waveImg2}
                 alt=""
                 class="game-field__wave game-field__wave_2"
               />
