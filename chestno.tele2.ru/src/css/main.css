@@ -1595,6 +1595,7 @@ body .page {
   width: 85%;
   height: 100%;
   opacity: 1;
+  filter: invert(19%) sepia(126%) saturate(713%) hue-rotate(162deg) brightness(100%) contrast(91%);
 }
 .game .section-layer_main .game__screen_main .game__field_middle .dolphin__bone {
   position: absolute;
