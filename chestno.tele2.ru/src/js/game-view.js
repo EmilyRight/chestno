@@ -64,8 +64,12 @@ class GameView extends ItemView {
           Звоните сколько угодно, если вы&nbsp;в&nbsp;Tele2
         </div>
         <p class="subtitle">
-          Подключайтесь, чтобы получить безлимит на&nbsp;звонки в&nbsp;сети
-          Tele2 и&nbsp;отдыхать спокойно
+        Подключайтесь, чтобы получить безлимит на&nbsp;звонки в&nbsp;сети Tele2 по&nbsp;<a
+        class="js-gtm-event"
+        data-event="text-link_rissia"
+        data-section="section-game-score"
+        href="https://tele2.ru/promotions/article/spisok-regionov"
+        target="_blank" >всей России</a> и&nbsp;отдыхать спокойно
         </p>
         <a
           class="btn btn-primary js-gtm-event"
@@ -166,7 +170,6 @@ class GameView extends ItemView {
       </div>
     `;
   }
-
 
   createScoreScreen(score) {
     const waveImg3 = require('../img/page/final-wave.png');
