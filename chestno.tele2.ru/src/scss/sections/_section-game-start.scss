@@ -17,7 +17,7 @@
     min-height: 35rem;
   }
   .section-layer_initial {
-    padding: 6rem 8.4rem;
+    padding: 6rem 8.4rem 10.4rem;
     background-color: #fff;
     position: relative;
     z-index: 1;
@@ -36,6 +36,14 @@
       text-decoration: underline;
       &:hover {
         text-decoration: none;
+      }
+    }
+    .box-content__buttons {
+      display: flex;
+      align-items: center;
+      .btn {
+        margin: 0;
+        margin-right: 2.4rem;
       }
     }
     .box-pic {
@@ -171,7 +179,7 @@
       min-height: 55.6rem;
     }
     .section-layer {
-      padding: 3.6rem 2.2rem;
+      padding: 3.6rem 2.2rem 5.4rem;
       max-width: 90.4%;
       .box-pic {
         bottom: -5rem;
@@ -232,6 +240,15 @@
           margin-bottom: 1.8rem;
         }
       }
+      .box-content__buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .btn {
+          margin: 0;
+          margin-bottom: 2.4rem;
+        }
+      }
       .btn {
         padding: 1.3rem 3.5rem;
         min-width: auto;
@@ -242,12 +259,14 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        text-align: center;
       }
 
       &__title {
         font-size: 2rem;
         line-height: 2.6rem;
         max-width: 100%;
+
       }
 
       &__close-icon {
@@ -278,6 +297,15 @@
           top: 0rem;
           transform: rotate(45deg);
         }
+      }
+    }
+    .info {
+      &__title {
+        font-weight: 700;
+        margin-bottom: 2.4rem;
+      }
+      .subtitle {
+        margin-bottom: 2.4rem;
       }
     }
   }
