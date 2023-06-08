@@ -63,6 +63,13 @@ p {
   }
 }
 
+.text-link {
+  text-decoration: underline;
+  cursor: pointer;
+  &:hover {
+    text-decoration: none;
+  }
+}
 .br-desktop {
   @media (max-width: 600px) {
     display: none;
