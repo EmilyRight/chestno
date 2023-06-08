@@ -95,7 +95,6 @@ class Game extends GameView {
     gameItemHtml.style.bottom = `${coords.bottom}px`;
     gameItemHtml.style.left = `${coords.left}px`;
     gameArea.append(gameItemHtml);
-    console.log('append', gameItemHtml);
     gameItem.playAnimation();
   }
 
