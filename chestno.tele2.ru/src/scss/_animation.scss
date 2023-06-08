@@ -227,25 +227,28 @@
 }
 @keyframes wave {
   0% {
-    transform: translateX(0) translateZ(0) scaleY(1) rotate(-5deg);
+    transform: translateX(0) translateZ(0) scaleY(1);
   }
   50% {
     transform: translateX(-20%) translateZ(0) scaleY(0.7);
   }
   100% {
-    transform: translateX(-30%) translateZ(0) scaleY(1) rotate(5deg);
+    transform: translateX(-30%) translateZ(0) scaleY(1);
   }
 }
 
 @keyframes wave1 {
   0% {
-    transform: translateX(-50%) translateZ(0) scaleY(1);
+    transform: translateX(0) translateZ(0) scaleY(1);
+    opacity: 1;
   }
   50% {
-    transform: translateX(-60%) translateZ(-10%) scaleY(1.1);
+    transform: translateX(-20%) translateZ(0) scaleY(0.7);
+    opacity: 0.5;
   }
   100% {
-    transform: translateX(-70%) translateZ(0) scaleY(1);
+    transform: translateX(-30%) translateZ(0) scaleY(1);
+    opacity: 1;
   }
 }
 
