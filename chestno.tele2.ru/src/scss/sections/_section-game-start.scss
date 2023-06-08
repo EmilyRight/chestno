@@ -21,6 +21,9 @@
     background-color: #fff;
     position: relative;
     z-index: 1;
+    .box-content {
+      z-index: 100;
+    }
     .box-content__disclaimer {
       font-family: $font1;
       font-size: 1.6rem;
@@ -34,6 +37,8 @@
     .box-content__link {
       font-family: $font1;
       text-decoration: underline;
+      position: relative;
+      z-index: 100;
       &:hover {
         text-decoration: none;
       }

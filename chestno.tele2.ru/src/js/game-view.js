@@ -45,7 +45,7 @@ class GameView extends ItemView {
               <div class="box-content__link modal__link subtitle js-gtm-event"
               data-event="let-me-in"
               data-section="section-game-start">
-                Хочу так же
+                Не&nbsp;хочу играть, хочу в&nbsp;Tele2!
               </div>
             </div>
           </div>

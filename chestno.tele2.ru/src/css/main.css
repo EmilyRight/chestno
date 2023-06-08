@@ -1081,6 +1081,9 @@ body .page {
   position: relative;
   z-index: 1;
 }
+.game .section-layer_initial .box-content {
+  z-index: 100;
+}
 .game .section-layer_initial .box-content__disclaimer {
   font-family: "tele2_sans";
   font-size: 1.6rem;
@@ -1094,6 +1097,8 @@ body .page {
 .game .section-layer_initial .box-content__link {
   font-family: "tele2_sans";
   text-decoration: underline;
+  position: relative;
+  z-index: 100;
 }
 .game .section-layer_initial .box-content__link:hover {
   text-decoration: none;
@@ -2067,7 +2072,7 @@ body .page {
     margin-bottom: 1.8rem;
   }
   .section-benefits .benefits__item {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-family: "tele2_sans";
     display: flex;
     align-items: center;
