@@ -145,9 +145,10 @@ class Game extends GameView {
       url: 'http://chestno.tele2.ru',
       title: `Я поймал ${score} дельфинов, а ты?`,
     };
-    const possibleNumbers = [1, 21, 31, 41];
+    const possibleNumbers = [1, 2, 3, 4];
     if (score) {
-      if (possibleNumbers.includes(score) === true) {
+      const lastDigit = Number(score.toString().slice(-1));
+      if (possibleNumbers.includes(lastDigit) === true) {
         shareOptions.title = `Я поймал ${score} дельфинa, а ты?`;
       }
     }
@@ -227,7 +228,9 @@ class Game extends GameView {
     clearInterval(this.initFieldInterval);
     this.setGameStatus(false);
     const mainScreen = document.querySelector('.section-layer_main');
-    mainScreen.style.animation = fadeInAnimation;
+    if (mainScreen) {
+      mainScreen.style.animation = fadeInAnimation;
+    }
     this.sectionGame.innerHTML = this.createScoreScreen(this.score);
     const scoreScreen = document.querySelector('.section-layer_final');
     scoreScreen.style.animation = fadeOutAnimation;
