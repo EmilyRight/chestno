@@ -67,7 +67,6 @@ class Game extends GameView {
 
     const bottom = Math.floor(Math.random() * fieldHeight);
     const left = (Math.floor(Math.random() * gameRight - gameLeft + 1) + gameLeft);
-
     return ({ bottom, left });
   }
 
@@ -89,7 +88,6 @@ class Game extends GameView {
   }
 
   createGameItems(gameArea, gameItem) {
-    const randomTimeout = Math.floor(Math.random() * 3);
     const gameItemHtml = gameItem.getHtml();
     const coords = this.createRandomPosition(gameArea, gameItemHtml);
     gameItemHtml.style.bottom = `${coords.bottom}px`;
@@ -142,7 +140,6 @@ class Game extends GameView {
     const vkShareBtn = document.querySelector('.share__icon_vk');
     const okShareBtn = document.querySelector('.share__icon_ok');
     const tgShareBtn = document.querySelector('.share__icon_tg');
-    const shareBlock = document.querySelector('.share');
     const { score } = this;
     const shareOptions = {
       url: 'http://chestno.tele2.ru',

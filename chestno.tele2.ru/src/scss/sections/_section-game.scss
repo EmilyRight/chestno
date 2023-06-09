@@ -133,6 +133,7 @@
         user-select: none;
         -webkit-tap-highlight-color: transparent;
       }
+
       .dolphin {
         position: absolute;
         bottom: 20%;
@@ -149,6 +150,7 @@
             transform-origin: 50% 50%;
           }
         }
+
         &__image {
           position: absolute;
           user-select: none;
@@ -165,6 +167,9 @@
           width: 150%;
           height: 150%;
           animation: 5s jump linear alternate infinite;
+          &.no-point {
+            pointer-events: none;
+          }
         }
         &__head,
         &__tail {
@@ -172,6 +177,8 @@
           display: block;
           background-size: contain;
           cursor: pointer;
+
+
         }
         &__head {
           position: absolute;
@@ -387,4 +394,3 @@
     transform: rotate(-8deg);
   }
 }
-

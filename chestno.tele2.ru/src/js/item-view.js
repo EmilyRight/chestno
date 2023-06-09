@@ -1,5 +1,7 @@
 class ItemView {
   constructor(className) {
+    this.itemHead = this.createItemHead();
+    this.itemTail = this.createItemTail();
     this.itemBody = this.createItemBody();
     this.itemBone = this.createBoneContainer();
     this.dolphinContainer = this.createItemView();
@@ -32,10 +34,7 @@ class ItemView {
     return boneContainer;
   }
 
-  createItemView() {
-    const dolphinContainer = document.createElement('div');
-    dolphinContainer.classList.add('dolphin');
-
+  createItemHead() {
     const itemHead = document.createElement('div');
     itemHead.classList.add('dolphin__image');
     itemHead.classList.add('dolphin__head');
@@ -43,7 +42,10 @@ class ItemView {
     itemHead.setAttribute('data-event', 'game-dolphin');
     itemHead.setAttribute('data-section', 'section-game');
     itemHead.addEventListener('click', this.pauseAnimation.bind(this, itemHead));
+    return itemHead;
+  }
 
+  createItemTail() {
     const itemTail = document.createElement('div');
     itemTail.classList.add('dolphin__image');
     itemTail.classList.add('dolphin__tail');
@@ -51,8 +53,13 @@ class ItemView {
     itemTail.setAttribute('data-event', 'game-dolphin');
     itemTail.setAttribute('data-section', 'section-game');
     itemTail.addEventListener('click', this.pauseAnimation.bind(this, itemTail));
+    return itemTail;
+  }
 
-    this.itemBone.append(itemHead, itemTail);
+  createItemView() {
+    const dolphinContainer = document.createElement('div');
+    dolphinContainer.classList.add('dolphin');
+    this.itemBone.append(this.itemHead, this.itemTail);
     this.itemBody.append(this.itemBone);
     dolphinContainer.append(this.itemBody);
     return dolphinContainer;
@@ -105,6 +112,7 @@ class ItemView {
 
       this.itemBody.addEventListener('transitionend', this.resumeAnimation.bind(this));
       this.dolphinContainer.classList.add('ss');
+      this.itemBody.classList.add('no-point');
       document.dispatchEvent(new CustomEvent('catch', {
         detail: {
           isCatched: true,

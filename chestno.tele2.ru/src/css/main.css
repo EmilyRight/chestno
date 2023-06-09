@@ -1529,6 +1529,9 @@ body .page {
   height: 150%;
   animation: 5s jump linear alternate infinite;
 }
+.game .section-layer_main .game__screen_main .dolphin__body.no-point {
+  pointer-events: none;
+}
 .game .section-layer_main .game__screen_main .dolphin__head, .game .section-layer_main .game__screen_main .dolphin__tail {
   background: url(../img/page/tail-bottom.svg) no-repeat 50% 50%;
   display: block;
@@ -1854,8 +1857,8 @@ body .page {
 .game .section-layer_final .result__share {
   position: relative;
   z-index: 10;
-  width: 100%;
-  text-align: center;
+  max-width: 100%;
+  margin: 0 auto;
 }
 .game .section-layer_final .result__waves {
   position: absolute;
