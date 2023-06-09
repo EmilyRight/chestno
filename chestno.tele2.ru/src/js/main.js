@@ -19,7 +19,6 @@ window.addEventListener('load', () => {
   game.openModal();
   game.handleClosingModal();
   startGame();
-
   document.addEventListener('endGame', () => {
     endGame();
     goNextSection();
@@ -58,6 +57,7 @@ function showPreGameScreen(gameObject) {
     gameObject.init();
   });
 }
+
 function startGame() {
   const startButton = document.querySelector('.start-game');
   const initialScreen = document.querySelector('.section-layer_initial');
