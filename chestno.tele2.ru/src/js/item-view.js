@@ -90,7 +90,6 @@ class ItemView {
       ],
       {
         duration: 1500,
-        // delay: Math.floor(Math.random() * 3) * 1000,
         fill: 'forwards',
         easing: 'linear',
         iterations: 1,
@@ -119,7 +118,6 @@ class ItemView {
   resumeAnimation() {
     this.dolphinContainer.classList.remove('ss');
     this.elementAnimation.play();
-    // this.gameItem.remove();
   }
 }
 export default ItemView;

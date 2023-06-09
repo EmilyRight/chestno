@@ -68,11 +68,15 @@ export function gaPush(d) {
     noninteraction: false,
   };
     /// Unique ID
+  function dec2hex(dec) {
+    return (`0${dec.toString(16)}`).substr(-2);
+  }
+
   function generateId(len) {
     const arr = new Uint8Array((len || 40) / 2);
-    window.crypto.getRandomValues(arr); return Array.from(arr, dec2hex).join('');
+    window.crypto.getRandomValues(arr);
+    return Array.from(arr, dec2hex).join('');
   }
-  function dec2hex(dec) { return (`0${dec.toString(16)}`).substr(-2); }
 
   try {
     dataLayer.push(fullEventData);

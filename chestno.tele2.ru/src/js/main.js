@@ -4,7 +4,6 @@ import $, { event } from 'jquery';
 import { WOW } from './vendor/wow.min';
 import { gtmSet, gaPush } from './gtm-events';
 import { fadeInAnimation, fadeOutAnimation, hideStartScreen } from './constants';
-import GameView from './game-view';
 import Game from './game';
 
 window.jQuery = window.$ = $;
@@ -98,14 +97,6 @@ function closeShareModal() {
   });
 }
 
-function showHiddenBlocks() {
-  const newBlocks = document.querySelectorAll('.section_hidden');
-  newBlocks.forEach((block) => {
-    block.style.display = 'block';
-    block.style.animation = fadeOutAnimation;
-  });
-}
-
 function endGame() {
   clearTimeout(screensAnimation);
   endGameEventPush();
@@ -157,21 +148,6 @@ function videoTeaser() {
   }
 }
 
-// Удалить или порефакторить
-function updateVideoSource() {
-  const videoSourceMob = document.querySelector('.link-video-mobile').href;
-  console.log(videoSourceMob);
-  const videoSourceDesk = document.querySelector('.link-video-desktop').href;
-  const source = document.querySelector('.video-source');
-  const width = window.innerWidth;
-  if (width > 600) {
-    console.log('hey');
-    source.setAttribute('src', videoSourceDesk);
-  } else {
-    source.setAttribute('src', videoSourceMob);
-  }
-}
-
 // scroll-to
 function goNextSection() {
   const goNextBtns = document.querySelectorAll('.js-go-next');
@@ -208,17 +184,4 @@ function getMobileOs() {
   if (/android/i.test(uA)) { return 'android'; }
   if (/iPad|iPhone|iPod/.test(uA) && !window.MSStream) { return 'ios'; }
   return 'unknown';
-}
-
-function handleFooter() {
-  const screenWidth = window.innerWidth;
-  const footer = document.querySelector('.section--footer');
-  const endScreen = document.querySelector('.section-layer_final');
-  if (game.gameIsOn === false) {
-    if (screenWidth < 600 && footer.classList.contains('footer_upper')) {
-      footer.classList.remove('footer_upper');
-    } else if (screenWidth > 600) {
-      footer.classList.add('footer_upper');
-    }
-  }
 }
