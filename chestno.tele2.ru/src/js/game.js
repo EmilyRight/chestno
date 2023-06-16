@@ -146,9 +146,10 @@ class Game extends GameView {
       title: `Я поймал ${score} дельфинов, а ты?`,
     };
     const possibleNumbers = [1, 2, 3, 4];
+    const exclusions = [11, 12, 13, 14];
     if (score) {
       const lastDigit = Number(score.toString().slice(-1));
-      if (possibleNumbers.includes(lastDigit) === true) {
+      if (possibleNumbers.includes(lastDigit) === true && !exclusions.includes(score)) {
         shareOptions.title = `Я поймал ${score} дельфинa, а ты?`;
       }
     }
